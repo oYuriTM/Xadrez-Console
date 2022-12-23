@@ -22,6 +22,27 @@ internal abstract class Peca
         this.tab = tab;
     }
 
+    public bool existeMovimentosPossiveis()
+    {
+        bool[,] mat = movimentosPossíveis();
+        for (int i=0; i<tab.Linhas; i++)
+        {
+            for (int j=0; j<tab.Colunas; j++)
+            {
+                if (mat[i, j])
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool podeMoverPara(Posicao pos)
+    {
+        return movimentosPossíveis()[pos.Linha, pos.Coluna];
+    }
+
     public void incrementarQteMovimentos()
     {
         qteMovimentos++;
