@@ -47,4 +47,9 @@ internal abstract class Peca
     {
         qteMovimentos++;
     }
+
+    public void decrementarQteMovimentos()
+    {
+        qteMovimentos--;
+    }
 }
